@@ -1,7 +1,17 @@
 function fetchBooks() {
-  // To pass the tests, don't forget to return your fetch!
-  
+  return fetch("https://anapioficeandfire.com/api/books")
+  .then((resp) => resp.json())
+  .then((json) => renderBooks(json));
 }
+
+fetch("http://api.open-notify.org/astros.json")
+  .then(function (response) {
+    console.log(response);
+    return response.json();
+  })
+  .then(function (json) {
+    console.log(json);
+  });
 
 function renderBooks(books) {
   const main = document.querySelector('main');
